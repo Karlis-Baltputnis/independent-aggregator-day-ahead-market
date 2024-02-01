@@ -1,4 +1,4 @@
-# Independent-Aggregator-Day-Ahead-Market
+# independent-aggregator-day-ahead-market
 
 These are the MATLAB scripts and functions used to prepare the calculations for the manuscript:  
   
