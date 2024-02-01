@@ -1,4 +1,4 @@
-# IA_in_DAM_paper
+# Independent-Aggregator-Day-Ahead-Market
 
 These are the MATLAB scripts and functions used to prepare the calculations for the manuscript:
 K. Baltputnis, T. Schittekatte, Z. Broka,
