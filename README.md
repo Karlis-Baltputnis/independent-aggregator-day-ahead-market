@@ -2,6 +2,7 @@
 
 These are the MATLAB scripts and functions used to prepare the calculations for the manuscript:  
 K. Baltputnis, T. Schittekatte, Z. Broka,  
+  
 **Independent aggregation in the Nordic day-ahead market: what is the welfare impact of socializing supplier compensation payments?**
 
 The workflow is as follows:
