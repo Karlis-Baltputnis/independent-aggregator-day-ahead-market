@@ -10,3 +10,5 @@ The workflow is as follows:
 5) Run the post_proc.m script. It will provide an interactive interface to visualize the main metrics of interest. Likewise these metrics and their components will be available in the active workspace via MATLAB's interface.
 
 The workflow was last validated on 2024-02-01 using MATLAB R2021a.
+
+Note: intermeddiate results files DR_surplus_change.mat and main_results.mat are not included in this folder due to their large size (~94 MB and ~440 MB). They can be obtained by running the scripts as described above.
