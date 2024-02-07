@@ -14,4 +14,4 @@ The workflow is as follows:
 
 The workflow was last validated on 2024-02-01 using MATLAB R2021a.
 
-After manuscript acceptance, the repository will be archived and registered on Zenodo.
+<ins>After manuscript acceptance, the repository will be archived and registered on Zenodo.</ins>
