@@ -13,3 +13,5 @@ The workflow is as follows:
 5) Run the _post_proc_ms.m_ script. It will provide an interactive interface to visualize the main metrics of interest. Likewise these metrics and their components will be available in the active workspace via MATLAB's interface.
 
 The workflow was last validated on 2024-02-01 using MATLAB R2021a.
+
+After manuscript acceptance, the repository will be archived and registered on Zenodo.
