@@ -53,9 +53,9 @@ DR_sold_volume = round(DR_sold_volume,12); % to avoid floating point issues
 %% Calculate the surpluses and their change
 % prepare curves for area calculations via trapezoidal integration
 new_buy_volumes = [new_buy_volumes; 0]; % add the points necessary to connect the curves to the y-axis
-new_buy_prices = [new_buy_prices; 3000];
+new_buy_prices = [new_buy_prices; 3000];    % 3000 €/MWh was the price ceiling in 2018, if the function is used for other data it has to be adjusted (or optimally - identified programmatically)
 new_sell_volumes = [0; new_sell_volumes];
-new_sell_prices = [-500; new_sell_prices];
+new_sell_prices = [-500; new_sell_prices];  % -500 €/MWh was the price floor in 2018, if the function is used for other data it has to be adjusted (or optimally - identified programmatically)
 
 % if the MCV2 or MCP2 are not among the defined curve points in the respective variables, they need to be added for the integretion to be accurate
 if ~ismember(MCV2,new_sell_volumes)
@@ -82,9 +82,9 @@ end
 
 % calculate producer surplus and gross consumer surplus (i.e., these are
 % the surpluses that arise from the market bid and offer curves
-prod_surplus = MCP2*1000*MCV2 - trapz(1000*new_sell_volumes(new_sell_volumes<=MCV2),new_sell_prices(new_sell_volumes<=MCV2)); % all surpluses in �
+prod_surplus = MCP2*1000*MCV2 - trapz(1000*new_sell_volumes(new_sell_volumes<=MCV2),new_sell_prices(new_sell_volumes<=MCV2)); % all surpluses in €
 con_surplus = trapz(1000*flip(new_buy_volumes(new_buy_volumes<=MCV2)),flip(new_buy_prices(new_buy_volumes<=MCV2))) - MCP2*1000*MCV2;
 
-compensation = 1000*DR_sold_volume*round(comp_share_soc*comp_price,6); % value in �
+compensation = 1000*DR_sold_volume*round(comp_share_soc*comp_price,6); % value in €
 
 end
