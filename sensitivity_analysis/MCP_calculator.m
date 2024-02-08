@@ -50,7 +50,7 @@ else
     [MCV2, MCP2] = intersections(buy_volumes,buy_prices,new_sell_volumes,new_sell_prices);
 end
 
-% Calculate the volume of DR sold �> necessary when the available DR volume exceeds the one necessary to drive the MCP down to the DR bid price
+% Calculate the volume of DR sold –> necessary when the available DR volume exceeds the one necessary to drive the MCP down to the DR bid price
 DR_sold_volume = intersections([0,99999],[MCP2,MCP2],buy_volumes,buy_prices) - intersections([0,99999],[MCP2,MCP2],sell_volumes,sell_prices);
 DR_sold_volume = round(DR_sold_volume,6);
 
@@ -65,15 +65,15 @@ if isempty(prod_surplus_0)
     end
     
     buy_volumes = [buy_volumes; 0]; % add the points necessary to connect the curves to the y-axis
-    buy_prices = [buy_prices; 3000];
+    buy_prices = [buy_prices; 3000]; % price ceiling 3000 €/MWh is valid for 2018; if function is to be used for other data, this has to be adjusted
     sell_volumes = [0; sell_volumes];
-    sell_prices = [-500; sell_prices];
+    sell_prices = [-500; sell_prices]; % price floor –500 €/MWh is valid for 2018; if function is to be used for other data, this has to be adjusted
     new_sell_volumes = [0; new_sell_volumes];
-    new_sell_prices = [-500; new_sell_prices];
+    new_sell_prices = [-500; new_sell_prices];  % price floor –500 €/MWh is valid for 2018; if function is to be used for other data, this has to be adjusted
     % if the MCV,MCV2, MCP or MCP2 are missing from the curves, they need to be added for the integration to be accurate
     if ~ismember(MCV,new_sell_volumes)                                                              % this code is not optimized for efficiency, but it surely could be done
         add_idx = find(new_sell_volumes>MCV,1,'first');
-        [x,add_price] = intersections([MCV,MCV],[-500,3000],new_sell_volumes,new_sell_prices);
+        [x,add_price] = intersections([MCV,MCV],[-500,3000],new_sell_volumes,new_sell_prices); % adjust price ceiling and floor is reusing the function for other data
         new_sell_prices = [new_sell_prices(1:add_idx-1); add_price; new_sell_prices(add_idx:end)];
         new_sell_volumes = [new_sell_volumes(1:add_idx-1); MCV; new_sell_volumes(add_idx:end)];
     end
@@ -100,7 +100,7 @@ if isempty(prod_surplus_0)
     end
     if ~ismember(MCV2,sell_volumes)
         add_idx = find(sell_volumes>MCV2,1,'first');
-        [x,add_price] = intersections([MCV2,MCV2],[-500,3000],sell_volumes,sell_prices);
+        [x,add_price] = intersections([MCV2,MCV2],[-500,3000],sell_volumes,sell_prices); % adjust price ceiling and floor is reusing the function for other data
         sell_prices = [sell_prices(1:add_idx-1); add_price; sell_prices(add_idx:end)];
         sell_volumes = [sell_volumes(1:add_idx-1); MCV2; sell_volumes(add_idx:end)];
     end
@@ -141,7 +141,7 @@ if isempty(prod_surplus_0)
         sell_prices = [sell_prices(1:add_idx-1); DR_sell_price; sell_prices(add_idx:end)];
     end
     
-    prod_surplus = MCP2*1000*MCV2 - trapz(1000*new_sell_volumes(new_sell_volumes<=MCV2),new_sell_prices(new_sell_volumes<=MCV2)); % all surpluses in �!!!
+    prod_surplus = MCP2*1000*MCV2 - trapz(1000*new_sell_volumes(new_sell_volumes<=MCV2),new_sell_prices(new_sell_volumes<=MCV2)); % all surpluses in €!!!
     con_surplus = trapz(1000*flip(buy_volumes(buy_volumes<=MCV2)),flip(buy_prices(buy_volumes<=MCV2))) - MCP2*1000*MCV2;
 else
     prod_surplus = prod_surplus_0;
@@ -155,5 +155,5 @@ if DR_sold_volume > 0           % the surplus change is calculated with two diff
         + trapz(1000*flip(buy_volumes(buy_prices<=MCP&buy_prices>=MCP2)),flip(buy_prices(buy_prices<=MCP&buy_prices>=MCP2)),1)...
         - trapz(1000*new_sell_volumes(new_sell_volumes>=MCV&new_sell_volumes<=MCV2),new_sell_prices(new_sell_volumes>=MCV&new_sell_volumes<=MCV2),1);
 end
-compensation = 1000*DR_sold_volume*round(comp_share_soc*comp_price,2); % value in �
+compensation = 1000*DR_sold_volume*round(comp_share_soc*comp_price,2); % value in €
 end
