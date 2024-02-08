@@ -4,6 +4,10 @@
 % Nordic electricity market operator Nord Pool
 % last tested and confirmed as working on 2024-02-01
 
+% this code was used to obtain the input data for the manuscript
+% K. Baltputnis, T. Schittekatte, Z. Broka, 
+% Independent aggregation in the Nordic day-ahead market: what is the welfare impact of socializing supplier compensation payments?
+
 current_date_string = '2018-01-01';
 
 current_date = datenum(current_date_string);
