@@ -2,6 +2,7 @@ function [MCP2,MCV2,DR_sold_volume,prod_surplus,con_surplus,compensation] = MCP_
 
 % MCP_calculator_ms - function to perform market clearing simulation with
 % and without additional offers by an IA
+
 % this code was used to obtain the results in the manuscript
 % K. Baltputnis, T. Schittekatte, Z. Broka, 
 % Independent aggregation in the Nordic day-ahead market: what is the welfare impact of socializing supplier compensation payments?
