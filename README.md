@@ -3,7 +3,7 @@
 These are the **MATLAB** scripts and functions used to prepare the calculations for the manuscript:  
   
 K. Baltputnis, T. Schittekatte, Z. Broka,  
-**Independent aggregation in the Nordic day-ahead market: what is the welfare impact of socializing supplier compensation payments?**
+**Independent aggregation in the Nordic day-ahead market: what is the welfare impact of socializing supplier compensation payments?** (_[preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4720715)_)
 
 The workflow is as follows:
 1) Download the system price curve data reports from Nord Pool website using the script _bid_downloader.m_. If the command window displays a warning regarding the failure of downloading data for any particular days, the missing files have to manually be downloaded from https://www.nordpoolgroup.com/en/elspot-price-curves/
