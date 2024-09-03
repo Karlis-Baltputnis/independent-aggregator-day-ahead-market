@@ -11,4 +11,4 @@ The workflow is as follows:
 
 The workflow was last validated on 2024-02-01 using MATLAB R2021a.
 
-Note: intermeddiate results files _DR_surplus_change.mat_ and _main_results.mat_ are not included in this folder due to their large size (~94 MB and ~440 MB). They can be obtained by running the scripts as described above.
+Note: intermmediate results files _DR_surplus_change.mat_ and _main_results.mat_ are not included in this folder due to their large size (~94 MB and ~440 MB). They can be obtained by running the scripts as described above.
