@@ -19,4 +19,15 @@ The workflow was last validated on 2024-02-01 using MATLAB R2021a.
 TODO:
 * add Zenodo links
 * add translation link
-* add ackwnoldegment
+
+
+## 🙏 Acknowledgments
+
+<table>
+  <tr>
+    <td><img src="https://www.lzp.gov.lv/sites/lzp/files/gallery_images/rtu_flpp_logo_purple1.jpg" alt="Logo" width="100%"></td>
+    <td>This research is funded by the Latvian Council of Science, project "Multi-functional modelling tool for the significantly altering future electricity markets and their development (SignAture)", project No. lzp-2021/1-0227.</td>
+  </tr>
+</table>
+
+---
