@@ -18,7 +18,7 @@ The workflow was last validated on 2024-02-01 using MATLAB R2021a.
 
 TODO:
 * add Zenodo links
-* add translation link
+* add translation link and note on the python version being the main version to be maintained for future reaeearch endevours
 
 
 ## 🙏 Acknowledgments
