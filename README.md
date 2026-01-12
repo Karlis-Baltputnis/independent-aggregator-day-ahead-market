@@ -21,7 +21,7 @@ TODO:
 * add translation link and note on the python version being the main version to be maintained for future research endevours
 
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 <table>
   <tr>
